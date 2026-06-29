@@ -1,0 +1,1059 @@
+{
+  "generator_version": 1,
+  "image_models": "see specs/IMAGE-MODEL-SPECS.md (snapshot 2026-06-22); this file covers video models only.",
+  "models": [
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "16:9",
+        "9:16",
+        "1:1"
+      ],
+      "constraints": [],
+      "duration": {
+        "max": 15,
+        "min": 4
+      },
+      "id": "cinematic_studio_3_0",
+      "media_roles": {
+        "medias": [
+          "image",
+          "start_image",
+          "end_image"
+        ]
+      },
+      "modes": [],
+      "name": "Cinema Studio Video 3.0",
+      "output_type": "video",
+      "params": [
+        {
+          "default": false,
+          "description": "Generate audio for the video.",
+          "name": "generate_audio",
+          "required": "optional",
+          "type": "bool"
+        }
+      ],
+      "provider": "Higgsfield",
+      "resolutions": []
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "1:1",
+        "4:3",
+        "3:4",
+        "16:9",
+        "9:16"
+      ],
+      "constraints": [],
+      "duration": {
+        "values": [
+          5,
+          10
+        ]
+      },
+      "id": "cinematic_studio_video",
+      "media_roles": {
+        "medias": [
+          "image",
+          "start_image",
+          "end_image"
+        ]
+      },
+      "modes": [],
+      "name": "Cinema Studio Video",
+      "output_type": "video",
+      "params": [
+        {
+          "default": false,
+          "description": "Enable slow motion effect",
+          "name": "slow_motion",
+          "required": "optional",
+          "type": "bool"
+        },
+        {
+          "default": true,
+          "description": "Enable sound generation",
+          "name": "sound",
+          "required": "optional",
+          "type": "bool"
+        }
+      ],
+      "provider": "Higgsfield",
+      "resolutions": []
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "1:1",
+        "4:3",
+        "3:4",
+        "16:9",
+        "9:16"
+      ],
+      "constraints": [],
+      "duration": {
+        "max": 12,
+        "min": 3
+      },
+      "id": "cinematic_studio_video_v2",
+      "media_roles": {
+        "medias": [
+          "image",
+          "start_image",
+          "end_image"
+        ]
+      },
+      "modes": [
+        "pro",
+        "std"
+      ],
+      "name": "Cinema Studio Video",
+      "output_type": "video",
+      "params": [
+        {
+          "default": "auto",
+          "description": "Video genre/style",
+          "name": "genre",
+          "options": [
+            "auto",
+            "action",
+            "horror",
+            "comedy",
+            "western",
+            "suspense",
+            "intimate",
+            "spectacle"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": "std",
+          "description": "Quality mode: pro or standard",
+          "name": "mode",
+          "options": [
+            "pro",
+            "std"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": "on",
+          "description": "Generate audio. Use 'off' for a silent video.",
+          "name": "sound",
+          "options": [
+            "on",
+            "off"
+          ],
+          "required": "optional",
+          "type": "string"
+        }
+      ],
+      "provider": "Higgsfield",
+      "resolutions": []
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [],
+      "constraints": [],
+      "duration": null,
+      "id": "clipify",
+      "media_roles": {},
+      "modes": [],
+      "name": "Personal Clipper",
+      "output_type": "video",
+      "params": [
+        {
+          "description": "Exactly one YouTube URL. For multiple source videos, submit one Clipify job per URL.",
+          "name": "urls",
+          "required": "required",
+          "type": "string_array"
+        },
+        {
+          "default": 10,
+          "description": "How many clips to create.",
+          "name": "clips_num",
+          "required": "optional",
+          "type": "number"
+        },
+        {
+          "default": "9:16",
+          "description": "Clip aspect ratio.",
+          "name": "clip_aspect",
+          "options": [
+            "9:16",
+            "1:1",
+            "16:9"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": "#FFE84D",
+          "description": "Subtitle highlight color as #RRGGBB.",
+          "name": "subtitle_highlight_hex",
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": "bottom",
+          "description": "Subtitle vertical position.",
+          "name": "subtitle_position",
+          "options": [
+            "bottom",
+            "center",
+            "top"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": "notosans",
+          "description": "Subtitle font id.",
+          "name": "subtitle_font",
+          "options": [
+            "notosans",
+            "notoserif",
+            "notosansdisplay",
+            "ibmplexsans",
+            "mplusrounded1c",
+            "bebasneue",
+            "archivoblack",
+            "unbounded",
+            "inter",
+            "montserrat",
+            "bangers",
+            "permanentmarker",
+            "playfairdisplay",
+            "caveat"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "description": "Subtitle font size. Null lets the backend pick the default.",
+          "name": "subtitle_font_size",
+          "required": "optional",
+          "type": "number"
+        },
+        {
+          "default": "as-is",
+          "description": "Subtitle text case.",
+          "name": "subtitle_case",
+          "options": [
+            "upper",
+            "lower",
+            "as-is"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": true,
+          "description": "Track faces when cropping clips.",
+          "name": "track_face_crop",
+          "required": "optional",
+          "type": "bool"
+        },
+        {
+          "default": 1080,
+          "description": "Maximum source processing height.",
+          "name": "max_height",
+          "required": "optional",
+          "type": "number"
+        },
+        {
+          "default": 10,
+          "description": "Segment duration in seconds.",
+          "name": "segment_seconds",
+          "required": "optional",
+          "type": "number"
+        }
+      ],
+      "provider": "Higgsfield",
+      "resolutions": []
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "16:9",
+        "9:16",
+        "1:1"
+      ],
+      "constraints": [],
+      "duration": {
+        "max": 15,
+        "min": 1
+      },
+      "id": "grok_video",
+      "media_roles": {
+        "medias": [
+          "start_image"
+        ]
+      },
+      "modes": [],
+      "name": "Grok Imagine",
+      "output_type": "video",
+      "params": [],
+      "provider": "xAI",
+      "resolutions": []
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [],
+      "constraints": [],
+      "duration": {
+        "max": 15,
+        "min": 2
+      },
+      "id": "grok_video_v15",
+      "media_roles": {
+        "medias": [
+          "start_image"
+        ]
+      },
+      "modes": [],
+      "name": "Grok Imagine 1.5",
+      "output_type": "video",
+      "params": [
+        {
+          "default": "720p",
+          "description": "Output resolution",
+          "name": "resolution",
+          "options": [
+            "480p",
+            "720p"
+          ],
+          "required": "optional",
+          "type": "string"
+        }
+      ],
+      "provider": "xAI",
+      "resolutions": [
+        "480p",
+        "720p"
+      ]
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "16:9",
+        "9:16",
+        "1:1"
+      ],
+      "constraints": [],
+      "duration": null,
+      "id": "higgsfield_preset",
+      "media_roles": {
+        "medias": [
+          "image"
+        ]
+      },
+      "modes": [],
+      "name": "Higgsfield Preset",
+      "output_type": "video",
+      "params": [
+        {
+          "description": "Preset id from presets_show.",
+          "name": "preset_id",
+          "required": "required",
+          "type": "string"
+        }
+      ],
+      "provider": "Higgsfield",
+      "resolutions": []
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "16:9",
+        "9:16",
+        "1:1"
+      ],
+      "constraints": [],
+      "duration": {
+        "values": [
+          5,
+          10
+        ]
+      },
+      "id": "kling2_6",
+      "media_roles": {
+        "medias": [
+          "start_image"
+        ]
+      },
+      "modes": [],
+      "name": "Kling 2.6",
+      "output_type": "video",
+      "params": [
+        {
+          "default": true,
+          "description": "Generate with audio",
+          "name": "sound",
+          "required": "optional",
+          "type": "bool"
+        }
+      ],
+      "provider": "Kling",
+      "resolutions": []
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "16:9",
+        "9:16",
+        "1:1"
+      ],
+      "constraints": [],
+      "duration": {
+        "max": 15,
+        "min": 3
+      },
+      "id": "kling3_0",
+      "media_roles": {
+        "medias": [
+          "start_image",
+          "end_image"
+        ]
+      },
+      "modes": [
+        "std",
+        "pro",
+        "4k"
+      ],
+      "name": "Kling 3.0",
+      "output_type": "video",
+      "params": [
+        {
+          "default": "std",
+          "description": "Generation mode: std, pro, or 4k",
+          "name": "mode",
+          "options": [
+            "std",
+            "pro",
+            "4k"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": "on",
+          "description": "Generate audio. Use 'off' for silent video and lower credits.",
+          "name": "sound",
+          "options": [
+            "on",
+            "off"
+          ],
+          "required": "optional",
+          "type": "string"
+        }
+      ],
+      "provider": "Kling",
+      "resolutions": []
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "16:9",
+        "9:16",
+        "1:1"
+      ],
+      "constraints": [],
+      "duration": {
+        "max": 15,
+        "min": 3
+      },
+      "id": "kling3_0_turbo",
+      "media_roles": {
+        "medias": [
+          "start_image"
+        ]
+      },
+      "modes": [],
+      "name": "Kling 3.0 Turbo",
+      "output_type": "video",
+      "params": [
+        {
+          "default": "720p",
+          "description": "Output resolution",
+          "name": "resolution",
+          "options": [
+            "720p",
+            "1080p"
+          ],
+          "required": "optional",
+          "type": "string"
+        }
+      ],
+      "provider": "Kling",
+      "resolutions": [
+        "720p",
+        "1080p"
+      ]
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "auto",
+        "21:9",
+        "16:9",
+        "4:3",
+        "1:1",
+        "3:4",
+        "9:16"
+      ],
+      "constraints": [],
+      "duration": {
+        "max": 15,
+        "min": 4
+      },
+      "id": "marketing_studio_video",
+      "media_roles": {
+        "avatars": [],
+        "medias": [
+          "image",
+          "start_image",
+          "end_image"
+        ]
+      },
+      "modes": [],
+      "name": "Marketing Studio",
+      "output_type": "video",
+      "params": [
+        {
+          "default": "720p",
+          "description": "Video resolution",
+          "name": "resolution",
+          "options": [
+            "480p",
+            "720p",
+            "1080p"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": false,
+          "description": "Generate audio for the video",
+          "name": "generate_audio",
+          "required": "optional",
+          "type": "bool"
+        },
+        {
+          "description": "Marketing project / folder id",
+          "name": "folder_id",
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "description": "Optional explicit output width",
+          "name": "width",
+          "required": "optional",
+          "type": "number"
+        },
+        {
+          "description": "Optional explicit output height",
+          "name": "height",
+          "required": "optional",
+          "type": "number"
+        },
+        {
+          "description": "Product ids. Field name is `product_ids` (plural array of UUID strings). Do NOT use `product_id` (singular) — the server only accepts `product_ids`. For a single product pass `product_ids: ['<uuid>']`.",
+          "name": "product_ids",
+          "required": "optional",
+          "type": "string_array"
+        },
+        {
+          "description": "Optional backend asset ids",
+          "name": "assets",
+          "required": "optional",
+          "type": "string_array"
+        },
+        {
+          "description": "Optional Marketing Studio Setup hook id (the 'what' — attention-grabbing mechanic, e.g. 'Object flies into frame'). Get available ids from `show_marketing_studio` with `type='hook'`. Hooks/settings are supported only for these presets: UGC, Tutorial, Unboxing, Product Review, UGC Virtual Try On. If the user asks for hooks but does not provide `hook_id`, list hooks first via `show_marketing_studio(action='list', type='hook')` and ask/select from that list before calling generate_video. INDEPENDENT of `setting_id` — you can pass `hook_id` alone, `setting_id` alone, both, or neither. MUTUALLY EXCLUSIVE with `ad_reference_id` — hook/setting compose a video from explicit building blocks, while ad_reference recreates an existing video's scenario. Pick one approach, never both.",
+          "name": "hook_id",
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "description": "Optional Marketing Studio Setup setting id (the 'where' — location/vibe, e.g. 'Sunlit kitchen, morning light'). Get available ids from `show_marketing_studio` with `type='setting'`. Hooks/settings are supported only for these presets: UGC, Tutorial, Unboxing, Product Review, UGC Virtual Try On. INDEPENDENT of `hook_id` — you can pass `setting_id` alone, `hook_id` alone, both, or neither. MUTUALLY EXCLUSIVE with `ad_reference_id` — see `hook_id` for explanation.",
+          "name": "setting_id",
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "description": "Optional ad reference id. When set, the new marketing video follows the analyzed scenario of an existing reference video (scene composition, pacing, hook, narration) instead of inventing a structure from the prompt alone. Use this when the user wants to 'recreate this ad', 'make a video like this', or 'copy the style of this clip'. Create/list/edit ad references via `show_marketing_studio` with `type='ad_reference'`. AVATAR/PRODUCT ARE NOT AUTO-PULLED: if the ad reference was created with a linked avatar and/or product, those links are stored on the ad_reference for organizational/reference purposes only — they are NOT applied at generation time. The backend executor only reads avatar/product from explicit `avatars` / `product_ids` on this call. Rule: if the user wants the new video to feature the same avatar/product that was linked to the ad_reference (or a different one they specify), you MUST pass them explicitly here as `avatars: [{id, type: 'custom'|'preset'}]` and `product_ids: ['<uuid>']`. Example: ad_reference X was created with Sofia (preset) + On Cloud shoes linked, and the user says 'generate the marketing video' — you still pass `avatars: [{id: <sofia-id>, type: 'preset'}]` and `product_ids: ['<on-cloud-id>']` along with `ad_reference_id`. If the user asks for a different avatar/product than what was linked, just pass the new ones — the ad_reference still drives the scenario. MUTUALLY EXCLUSIVE with `hook_id` and `setting_id` — ad_reference replaces the explicit hook/setting composition with a reference-driven scenario. Pick one approach, never both.",
+          "name": "ad_reference_id",
+          "required": "optional",
+          "type": "string"
+        }
+      ],
+      "provider": "Higgsfield",
+      "resolutions": [
+        "480p",
+        "720p",
+        "1080p"
+      ]
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [],
+      "constraints": [],
+      "duration": {
+        "values": [
+          6,
+          10
+        ]
+      },
+      "id": "minimax_hailuo",
+      "media_roles": {
+        "medias": [
+          "start_image",
+          "end_image"
+        ]
+      },
+      "modes": [],
+      "name": "Minimax Hailuo",
+      "output_type": "video",
+      "params": [
+        {
+          "default": "minimax-2.3",
+          "description": "Hailuo model variant",
+          "name": "model",
+          "options": [
+            "minimax",
+            "minimax-fast",
+            "minimax-2.3",
+            "minimax-2.3-fast"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": "768",
+          "description": "Output resolution",
+          "name": "resolution",
+          "options": [
+            "512",
+            "768",
+            "1080"
+          ],
+          "required": "optional",
+          "type": "string"
+        }
+      ],
+      "provider": "Hailuo",
+      "resolutions": [
+        "512",
+        "768",
+        "1080"
+      ]
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "auto",
+        "16:9",
+        "9:16",
+        "4:3",
+        "3:4",
+        "1:1",
+        "21:9"
+      ],
+      "constraints": [],
+      "duration": {
+        "values": [
+          4,
+          8,
+          12
+        ]
+      },
+      "id": "seedance_1_5",
+      "media_roles": {
+        "medias": [
+          "start_image",
+          "end_image"
+        ]
+      },
+      "modes": [],
+      "name": "Seedance 1.5 Pro",
+      "output_type": "video",
+      "params": [
+        {
+          "default": "720p",
+          "description": "Output resolution",
+          "name": "resolution",
+          "options": [
+            "480p",
+            "720p",
+            "1080p"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": true,
+          "description": "Generate audio for the video. Set to false for a silent video.",
+          "name": "generate_audio",
+          "required": "optional",
+          "type": "bool"
+        }
+      ],
+      "provider": "Bytedance",
+      "resolutions": [
+        "480p",
+        "720p",
+        "1080p"
+      ]
+    },
+    {
+      "aliases": [
+        "video_standard"
+      ],
+      "aspect_ratios": [
+        "auto",
+        "21:9",
+        "16:9",
+        "4:3",
+        "1:1",
+        "3:4",
+        "9:16"
+      ],
+      "constraints": [
+        {
+          "forbids": {
+            "resolution": [
+              "1080p",
+              "4k"
+            ]
+          },
+          "param": "mode",
+          "source": "mode description: 'fast' supports 480p/720p only",
+          "value": "fast"
+        }
+      ],
+      "duration": {
+        "max": 15,
+        "min": 4
+      },
+      "id": "seedance_2_0",
+      "media_roles": {
+        "medias": [
+          "image",
+          "start_image",
+          "end_image",
+          "video",
+          "audio"
+        ]
+      },
+      "modes": [
+        "std",
+        "fast"
+      ],
+      "name": "Seedance 2.0",
+      "output_type": "video",
+      "params": [
+        {
+          "default": "720p",
+          "description": "Output resolution. 4k is supported only with mode='std'; mode='fast' supports 480p/720p only.",
+          "name": "resolution",
+          "options": [
+            "480p",
+            "720p",
+            "1080p",
+            "4k"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": "std",
+          "description": "'std' = higher quality and supports 480p/720p/1080p/4k; 'fast' = cheaper and faster (requires lower plan tier; supports 480p/720p only, not 1080p/4k)",
+          "name": "mode",
+          "options": [
+            "std",
+            "fast"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": "standard",
+          "description": "'standard' = normal output bitrate, 'high' = higher bitrate output",
+          "name": "bitrate_mode",
+          "options": [
+            "standard",
+            "high"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": "auto",
+          "description": "Cinematic genre hint",
+          "name": "genre",
+          "options": [
+            "auto",
+            "action",
+            "horror",
+            "comedy",
+            "noir",
+            "drama",
+            "epic"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": true,
+          "description": "Generate native audio for the video. Set to false for a silent video. Independent of audio reference medias.",
+          "name": "generate_audio",
+          "required": "optional",
+          "type": "bool"
+        }
+      ],
+      "provider": "Bytedance",
+      "resolutions": [
+        "480p",
+        "720p",
+        "1080p",
+        "4k"
+      ]
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "16:9",
+        "9:16"
+      ],
+      "constraints": [],
+      "duration": null,
+      "id": "veo3",
+      "media_roles": {
+        "medias": [
+          "start_image"
+        ]
+      },
+      "modes": [],
+      "name": "Google Veo 3",
+      "output_type": "video",
+      "params": [
+        {
+          "default": "veo-3-fast",
+          "description": "Model variant: preview (best quality) or fast (faster generation)",
+          "name": "model",
+          "options": [
+            "veo-3-preview",
+            "veo-3-fast"
+          ],
+          "required": "optional",
+          "type": "string"
+        }
+      ],
+      "provider": "Google",
+      "resolutions": []
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "16:9",
+        "9:16"
+      ],
+      "constraints": [],
+      "duration": {
+        "values": [
+          4,
+          6,
+          8
+        ]
+      },
+      "id": "veo3_1",
+      "media_roles": {
+        "medias": [
+          "start_image"
+        ]
+      },
+      "modes": [],
+      "name": "Google Veo 3.1",
+      "output_type": "video",
+      "params": [
+        {
+          "default": "basic",
+          "description": "Output quality",
+          "name": "quality",
+          "options": [
+            "basic",
+            "high",
+            "ultra"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": "veo-3-1-fast",
+          "description": "Model variant: preview (best quality) or fast (faster generation)",
+          "name": "model",
+          "options": [
+            "veo-3-1-preview",
+            "veo-3-1-fast"
+          ],
+          "required": "optional",
+          "type": "string"
+        }
+      ],
+      "provider": "Google",
+      "resolutions": []
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "16:9",
+        "9:16",
+        "auto"
+      ],
+      "constraints": [
+        {
+          "param": "resolution",
+          "requires": {
+            "duration": "8"
+          },
+          "source": "resolution description: 1080p requires duration=8.",
+          "value": "1080p"
+        }
+      ],
+      "duration": {
+        "values": [
+          4,
+          6,
+          8
+        ]
+      },
+      "id": "veo3_1_lite",
+      "media_roles": {
+        "medias": [
+          "start_image",
+          "end_image"
+        ]
+      },
+      "modes": [],
+      "name": "Veo 3.1 Lite",
+      "output_type": "video",
+      "params": [
+        {
+          "default": "720p",
+          "description": "Output resolution. 1080p requires duration=8.",
+          "name": "resolution",
+          "options": [
+            "720p",
+            "1080p"
+          ],
+          "required": "optional",
+          "type": "string"
+        },
+        {
+          "default": false,
+          "description": "Generate audio for the video. Enabling it increases credit cost.",
+          "name": "generate_audio",
+          "required": "optional",
+          "type": "bool"
+        }
+      ],
+      "provider": "Google",
+      "resolutions": [
+        "720p",
+        "1080p"
+      ]
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "16:9",
+        "9:16",
+        "1:1"
+      ],
+      "constraints": [],
+      "duration": {
+        "values": [
+          5,
+          10,
+          15
+        ]
+      },
+      "id": "wan2_6",
+      "media_roles": {
+        "medias": [
+          "image"
+        ]
+      },
+      "modes": [],
+      "name": "Wan 2.6",
+      "output_type": "video",
+      "params": [
+        {
+          "default": "720p",
+          "description": "Output quality",
+          "name": "quality",
+          "options": [
+            "720p",
+            "1080p"
+          ],
+          "required": "optional",
+          "type": "string"
+        }
+      ],
+      "provider": "Wan",
+      "resolutions": []
+    },
+    {
+      "aliases": [],
+      "aspect_ratios": [
+        "16:9",
+        "9:16",
+        "1:1",
+        "4:3",
+        "3:4"
+      ],
+      "constraints": [],
+      "duration": {
+        "max": 15,
+        "min": 2
+      },
+      "id": "wan2_7",
+      "media_roles": {
+        "medias": [
+          "start_image",
+          "end_image",
+          "audio"
+        ]
+      },
+      "modes": [],
+      "name": "Wan 2.7",
+      "output_type": "video",
+      "params": [
+        {
+          "default": "720p",
+          "description": "Output resolution",
+          "name": "resolution",
+          "options": [
+            "720p",
+            "1080p"
+          ],
+          "required": "optional",
+          "type": "string"
+        }
+      ],
+      "provider": "Wan",
+      "resolutions": [
+        "720p",
+        "1080p"
+      ]
+    }
+  ],
+  "snapshot_date": "2026-06-22",
+  "snapshot_file": "models_explore_snapshot_2026-06-22.json",
+  "snapshot_sha256": "0e8e7d3d93ff51f9128ea11e857c8874c73e3c9ba3f8abde4193247ac3e77ae1"
+}
